@@ -3,6 +3,8 @@
 echo "==> ✅ Entered entrypoint.sh"
 
 echo "==> Making and applying migrations..."
+python manage.py makemigrations users
+python manage.py migrate users
 python manage.py makemigrations
 python manage.py migrate
 
