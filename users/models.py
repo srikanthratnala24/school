@@ -30,7 +30,7 @@ class User(CreatedModifiedMixin, AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=False)
     first_name = models.CharField(max_length=25,blank=False)
     last_name = models.CharField(max_length=25,blank=False)
-    role = models.ForeignKey(Roles,on_delete=models.CASCADE,blank=True)
+    # role = models.ForeignKey(Roles,on_delete=models.CASCADE,blank=True)
     date_of_birth = models.DateField(blank=True,null=True)
     pin = models.CharField(max_length=6,blank=True,null=True)
 
