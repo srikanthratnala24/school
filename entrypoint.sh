@@ -2,9 +2,13 @@
 
 echo "==> ✅ Entered entrypoint.sh"
 
+echo "==> 🔥 Deleting old migration files (excluding __init__.py)..."
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+find . -path "*/migrations/*.pyc" -delete
+
 echo "==> Making and applying migrations..."
-python manage.py makemigrations users
-python manage.py migrate users
+python manage.py makemigrations users student teacher
+python manage.py migrate users student teacher
 python manage.py makemigrations
 python manage.py migrate
 
